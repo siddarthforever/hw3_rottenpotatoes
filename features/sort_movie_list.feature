@@ -24,8 +24,33 @@ Background: movies have been added to database
 Scenario: sort movies alphabetically
   When I follow "Movie Title"
   # your steps here
+  Then I should see the movies in the order
+  | title                   | rating | release_date |
+  | 2001: A Space Odyssey   | G      | 6-Apr-1968   |
+  | Aladdin                 | G      | 25-Nov-1992  |
+  | Amelie                  | R      | 25-Apr-2001  |
+  | Chicken Run             | G      | 21-Jun-2000  |
+  | Chocolat                | PG-13  | 5-Jan-2001   |
+  | Raiders of the Lost Ark | PG     | 12-Jun-1981  |
+  | The Help                | PG-13  | 10-Aug-2011  |
+  | The Incredibles         | PG     | 5-Nov-2004   |
+  | The Terminator          | R      | 26-Oct-1984  |
+  | When Harry Met Sally    | R      | 21-Jul-1989  |
+  
 
 Scenario: sort movies in increasing order of release date
   When I follow "Release Date"
   # your steps here
-
+ # Then I should see "The Terminator" before "When Harry Met Sally"
+  And I should see the movies in the order
+  | title                   | rating | release_date |
+  | 2001: A Space Odyssey   | G      | 6-Apr-1968   |
+  | Raiders of the Lost Ark | PG     | 12-Jun-1981  |
+  | The Terminator          | R      | 26-Oct-1984  |
+  | When Harry Met Sally    | R      | 21-Jul-1989  |
+  | Aladdin                 | G      | 25-Nov-1992  |
+  | Chicken Run             | G      | 21-Jun-2000  |
+  | Chocolat                | PG-13  | 5-Jan-2001   |
+  | Amelie                  | R      | 25-Apr-2001  |
+  | The Incredibles         | PG     | 5-Nov-2004   |
+  | The Help                | PG-13  | 10-Aug-2011  |
